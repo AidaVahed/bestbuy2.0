@@ -5,6 +5,8 @@ class Product:
     """Represents a product in the store."""
 
     def __init__(self, name, price, quantity):
+        if not name or price < 0 or quantity < 0:
+            raise ValueError("Invalid product details.")
         self.name = name
         self.price = price
         self.quantity = quantity
